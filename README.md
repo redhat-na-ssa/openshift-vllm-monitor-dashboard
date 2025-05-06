@@ -1,1 +1,14 @@
 # openshift-vllm-monitor-dashboard
+
+This project directly borrows from the [Grafana dashboard in AI On OpenShift](https://ai-on-openshift.io/odh-rhoai/kserve-uwm-dashboard-metrics/#install-the-rhoai-metrics-grafana-and-dashboards-for-single-serving-models) making use of the fact that OpenShift Observe Dashboards can parse Grafana dashboard JSON.
+
+This is a starting point but there are definitely rough edges, so feel free to contribute!
+
+## Kustomize
+
+There are 3 Kustomize options with one overlay to give maximal options.
+
+* cluster-monitoring: Enables user workload monitoring in OpenShift
+* dashboard: Code for monitoring your vLLM workloads
+* * There is a `base` option which only deploys the dashboard into the monitoring stack. The `overlays` option will wire up all of the necessary monitoring configurations for OpenShift (see the other two options here in the list) as well as the dashboard.
+* istio-monitoring: Enables monitoring of Service Mesh workloads
