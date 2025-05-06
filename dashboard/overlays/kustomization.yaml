@@ -3,5 +3,7 @@ kind: Kustomization
 
 resources:
 - ../base/
-- ../../cluster-monitoring
-- ../../istio-monitoring
+
+components:
+- ../../components/cluster-monitoring
+- ../../components/istio-monitoring
